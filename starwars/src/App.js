@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import PaginationField from './components/PaginationField'
 import SWCharacterList from './components/SWCharacterList'
 
 class App extends Component {
@@ -54,6 +55,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <PaginationField handlePagination={this.handlePagination} />
         <SWCharacterList characters={this.state.starwarsChars} />
       </div>
     );
