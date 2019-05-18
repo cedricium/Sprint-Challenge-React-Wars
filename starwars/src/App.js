@@ -7,8 +7,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      next: null,
+      previous: null
     };
+    this.handlePagination = this.handlePagination.bind(this)
+  }
+
+  /**
+   * 
+   * @param {String} direction - either 'next' or 'previous', representing the
+   *    direction in which to fetch additional characters. Used for pagination.
+   */
+  handlePagination(direction) {
+    if (this.state[direction] !== undefined && this.state[direction] !== null) {
+      this.getCharacters(this.state[direction])
+    }
   }
 
   componentDidMount() {
@@ -24,7 +38,12 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results });
+        const { results, next, previous } = data
+        this.setState({
+          starwarsChars: results,
+          next,
+          previous
+        });
       })
       .catch(err => {
         throw new Error(err);
