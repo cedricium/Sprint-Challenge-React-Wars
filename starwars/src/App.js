@@ -58,6 +58,7 @@ class App extends Component {
         <h1 className="Header">React Wars</h1>
         <PaginationField pagination={{ previous, next }} handlePagination={this.handlePagination} />
         <SWCharacterList characters={this.state.starwarsChars} />
+        <PaginationField pagination={{ previous, next }} handlePagination={this.handlePagination} />
       </div>
     );
   }
