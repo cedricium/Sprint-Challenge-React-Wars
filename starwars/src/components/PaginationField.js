@@ -1,11 +1,19 @@
 import React from 'react'
 
 const PaginationField = (props) => {
-  const { handlePagination } = props
+  const { handlePagination, pagination } = props
   return (
     <div>
-      <button onClick={() => handlePagination('previous')}>Previous</button>{` `}
-      <button onClick={() => handlePagination('next')}>Next</button>
+      <button
+        disabled={!pagination.previous}
+        onClick={() => handlePagination('previous')}>
+          Previous
+      </button>{` `}
+      <button
+        disabled={!pagination.next}
+        onClick={() => handlePagination('next')}>
+          Next
+      </button>
     </div>
   )
 }

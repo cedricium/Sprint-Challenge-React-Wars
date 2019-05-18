@@ -52,10 +52,11 @@ class App extends Component {
   };
 
   render() {
+    const { previous, next } = this.state
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <PaginationField handlePagination={this.handlePagination} />
+        <PaginationField pagination={{ previous, next }} handlePagination={this.handlePagination} />
         <SWCharacterList characters={this.state.starwarsChars} />
       </div>
     );
