@@ -9,7 +9,7 @@ const SWCharacterList = (props) => {
     <div className="characters-wrapper">
       {
         characters.map(character => {
-          return <SWCharacter character={character} />
+          return <SWCharacter key={character.name} character={character} />
         })
       }
     </div>
