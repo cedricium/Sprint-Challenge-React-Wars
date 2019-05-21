@@ -1,0 +1,33 @@
+.characters-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.characters-wrapper .character-card {
+  margin: 0 0 1rem;
+  max-width: 275px;
+  min-width: 275px;
+  width: 100%;
+  color: #F5F5F5;
+  background: #373C3F;
+  box-shadow: 0px 0px 25px rgba(55, 60, 63, 0.5);
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+}
+
+.characters-wrapper .character-card .name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.characters-wrapper .character-card .label {
+  color: #EEEEEE;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.characters-wrapper .character-card .label::after {
+  content: ":";
+}
